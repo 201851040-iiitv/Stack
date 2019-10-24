@@ -38,15 +38,14 @@ public class StackArrayList<DataType>implements Stack<DataType> {
 			return (DataType)arr[top];
 				}
 	public DataType pop() {
-		if(top==-1) {
-			BoundException obj=new BoundException();
-			obj.PrintError();	
-			return null;
-			}
-		else {
-			 DataType b=(DataType)arr[top];
+		try {
+			DataType b=(DataType)arr[top];
 			 top--;
 			 return b;
+			}
+		catch(Exception e){
+			System.out.println("error occured");
+			
 		}				
 
 	}
